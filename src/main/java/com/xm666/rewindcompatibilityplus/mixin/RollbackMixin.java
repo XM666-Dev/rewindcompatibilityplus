@@ -22,7 +22,7 @@ public class RollbackMixin {
         @Shadow
         public abstract boolean isDedicatedServer(Object server);
 
-        @Inject(method = "rollbackInPlace", at = @At("TAIL"))
+        @Inject(method = "rollbackInPlace", at = @At("TAIL"), remap = false)
         private void onRollbackInPlace(Object server, Path worldRoot, String slot, CallbackInfoReturnable<RollbackOutcome> cir) {
             if (isDedicatedServer(server)) return;
 
