@@ -38,3 +38,10 @@ config="${mod_id}.mixins.json"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="rewind"
+    type="required"
+    versionRange="[1.0.2,)"
+    ordering="NONE"
+    side="CLIENT"
